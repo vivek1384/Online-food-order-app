@@ -18,12 +18,13 @@ npm i -g json-server
 json-server --watch db.json
 ```
 
+Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+
+
 ## To see features of Super Admin 
 
 Email :- vivekdudatra13@gmail.com
 Password :- 1316
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
 ## Code scaffolding
 
