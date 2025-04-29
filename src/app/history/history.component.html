@@ -27,7 +27,8 @@
                 <p>Name : <strong><h3>{{item.name}}</h3></strong></p>
                 <p>Order Id : <strong>{{item.id}}</strong></p>                
                 <p>Total : <strong>₹{{item.totalPrice}}</strong></p>                
-                <p>Delivered : <strong>{{item.message}}</strong></p>
+                <p>Delivery Status : <strong>{{item.message}}</strong></p>
+                <p>Tips : <strong>{{item.message2}}</strong></p>
                 <p>Restaurant : <strong>{{item.resName}}</strong></p>
                 @if(item.delivered){
                     <button (click)="rate(item)">Rate Us</button>

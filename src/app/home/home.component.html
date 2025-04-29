@@ -1,6 +1,6 @@
 <header>
     <div class="left1">
-        <select name="" [(ngModel)]="resName" (change)="getItemListbyRes(resName)">
+        <select name="resName" [(ngModel)]="resName" (change)="getItemListbyRes(resName)">
             <option value="" selected  hidden>Select Restaurant</option>
             @for (item of resList; track $index) {
                 <option value="{{item.name}}">{{item.name}}</option>
@@ -62,7 +62,7 @@
             </div>
             }
         </div>
-        <input type="text" [(ngModel)]="orderData.message2" placeholder="Special tips..." autocomplete="off">
+        <input type="text" [(ngModel)]="orderData.message2" name="message2" placeholder="Special tips..." autocomplete="off">
         <Button class="order" (click)="orderPlace()">Order For ₹{{finalTotal}} <span>Including Tax(18%) : ₹{{finalTax}}</span></Button>
     </div>
 </div>
