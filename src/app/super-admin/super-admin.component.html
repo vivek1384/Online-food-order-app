@@ -1,0 +1,200 @@
+<div class="container">
+    <div class="left">
+        <div class="top">
+            <p (click)="getUserlist()">Users</p>
+            <p (click)="getAdminlist()">Admins</p>
+            <p (click)="getItemList()">Items</p>
+            <p (click)="getOrderList()">Orders</p>
+            <p (click)="getResList()">Restaurants</p>
+        </div>
+        <div class="bottom">
+            <button (click)="logout()">Logout</button>
+        </div>
+    </div>
+    <hr>
+    <div class="right">
+        <div class="input">
+            <input type="text" name="searchname" [(ngModel)]="searchName" placeholder="Search by Name" (keyup)="onChange1()">
+            <input type="text" name="searchId" [(ngModel)]="searchId" placeholder="Search by Id" (keyup)="onChange2()">
+        </div>
+        <div class="cards">
+            @if(isUser){
+            @for (item of list; track $index) {
+            <div class="card">
+                <div class="side1">
+                    <h2>Name : {{item.name}}</h2>
+                    <!-- <h4>Password : {{item.password}}</h4> -->
+                    @if(item.email){<h4>Mail : <strong>{{item.email}}</strong></h4>}
+                    @if(item.price){<h4>Price : <strong>₹{{item.price}}</strong></h4>}
+                    <!--@if(item.item){
+                    @for (item of item.item; track $index) {
+                    <h4>Item Name : <strong>{{item.name}}</strong> &nbsp; <span>Item Price :
+                            <strong>₹{{item.price}}</strong></span>&nbsp;
+                    <span>Item Quantity :
+                            <strong>{{item.number}}</strong></span>
+                    </h4>
+                    }
+                    <h4>Total Price : <strong>₹{{item.totalPrice}}</strong></h4>
+                    } -->
+                </div>
+                <div class="side2">
+                    <h3>Id : <h2>{{item.id}}</h2>
+                    </h3>
+                    <div class="buttons">
+                        <button (click)="userEdit(item)">Edit</button>
+                        <button (click)="deleteUser(item.id)">Delete</button>
+                    </div>
+                </div>
+
+            </div>
+            }}
+            @else if(isItem){
+            @for (item of list; track $index) {
+            <div class="card">
+                <div class="side1">
+                    <h2>Name : {{item.name}}</h2>
+                    <!-- <h4>Password : {{item.password}}</h4> -->
+                    @if(item.resName){<h4>Restaurant : <strong>₹{{item.resName}}</strong></h4>}
+                    @if(item.price){<h4>Price : <strong>₹{{item.price}}</strong></h4>}
+                    <!--@if(item.item){
+                            @for (item of item.item; track $index) {
+                            <h4>Item Name : <strong>{{item.name}}</strong> &nbsp; <span>Item Price :
+                                    <strong>₹{{item.price}}</strong></span>&nbsp;
+                            <span>Item Quantity :
+                                    <strong>{{item.number}}</strong></span>
+                            </h4>
+                            }
+                            <h4>Total Price : <strong>₹{{item.totalPrice}}</strong></h4>
+                            } -->
+                </div>
+                <div class="side2">
+                    <h3>Id : <h2>{{item.id}}</h2>
+                    </h3>
+                    <div class="buttons">
+                        <button (click)="itemEdit(item)">Edit</button>
+                        <button (click)="deleteItem(item.id)">Delete</button>
+                    </div>
+                </div>
+
+            </div>
+            }
+            }
+            @else if(isOrder){
+            @for (item of orderList; track $index) {
+            <div class="card">
+                <div class="side1">
+                    <h2>Name : {{item.name}}</h2>
+                    <!-- <h1>Password : {{item.password}}</h1> -->
+                    <!-- @if(item.email){<h4>Mail : {{item.email}}</h4>}                     -->
+                    <!-- @if(item.price){<h4>Price : {{item.price}}</h4>} -->
+                    @if(item.resName){<h4>Restaurants : {{item.resName}}</h4>}
+                    @if(item.item){
+                    @for (item of item.item; track $index) {
+                    <h4>Item Name : <strong>{{item.name}}</strong> &nbsp; <span>Item Price :
+                            <strong>₹{{item.price}}</strong></span>&nbsp;
+                        <span>Item Quantity :
+                            <strong>{{item.number}}</strong></span>
+                    </h4>
+                    <hr>
+                    }
+                    <h4>Total Price : <strong>₹{{item.totalPrice}}</strong></h4>
+                    }
+                </div>
+                <div class="side2">
+                    <h3>Id : <h2>{{item.id}}</h2>
+                    </h3>
+                    <div class="buttons">
+                        <button (click)="deleteOrder(item.id)">Delete</button>
+                    </div>
+                </div>
+
+            </div>
+            }}
+            @else if(isRes){
+            @for (item of resList; track $index) {
+            <div class="card">
+                <div class="side1">
+                    <h2>Restaurant Name : {{item.name}}</h2>
+                    <!-- <h4>Password : {{item.password}}</h4> -->
+                    @if(item.email){<h4>Mail : <strong>{{item.email}}</strong></h4>}
+                    @if(item.mono){<h4>Price : <strong>+91 {{item.mono}}</strong></h4>}
+                    @if(item.userId){<h4> : <strong> {{item.userId}}</strong></h4>}
+                    <!--@if(item.item){
+                        @for (item of item.item; track $index) {
+                        <h4>Item Name : <strong>{{item.name}}</strong> &nbsp; <span>Item Price :
+                                <strong>₹{{item.price}}</strong></span>&nbsp;
+                        <span>Item Quantity :
+                                <strong>{{item.number}}</strong></span>
+                        </h4>
+                        }
+                        <h4>Total Price : <strong>₹{{item.totalPrice}}</strong></h4>
+                        } -->
+                </div>
+                <div class="side2">
+                    <h3>Id : <h2>{{item.id}}</h2>
+                    </h3>
+                    <div class="buttons">
+                        <button (click)="resEdit(item)">Edit</button>
+                        <button (click)="deleteRes(item.id)">Delete</button>
+                    </div>
+                </div>
+
+            </div>
+
+            }
+            }
+        </div>
+    </div>
+</div>
+
+@if(isUserTrue){
+<div class="show">
+    <form action="">
+        <input type="text" placeholder="Name" [(ngModel)]="user.name" name="name">
+        <input type="text" placeholder="Email" [(ngModel)]="user.email" name="email">
+        <input type="text" placeholder="Password" [(ngModel)]="user.password" name="password">
+        <div class="action">
+            <button (click)="updateUser(user.id, user)">Update</button>
+            <button (click)="close()">Close</button>
+        </div>
+    </form>
+</div>
+}
+@if(isItemTrue){
+<div class="show">
+    <form action="">
+        <input type="text" placeholder="Name" [(ngModel)]="item.name" name="name">
+        <input type="text" placeholder="Price" [(ngModel)]="item.price" name="price">
+        <input type="text" placeholder="Restaurant" [(ngModel)]="item.resName" name="resName">
+        <div class="action">
+            <button (click)="updateItem(item.id, item)">Update</button>
+            <button (click)="close()">Close</button>
+        </div>
+    </form>
+</div>
+}
+@if(isResTrue){
+<div class="show">
+    <form action="">
+        <input type="text" placeholder="Name" [(ngModel)]="res.name" name="name">
+        <input type="text" placeholder="Mobile No." [(ngModel)]="res.mono" name="mono">
+        <input type="text" placeholder="Email" [(ngModel)]="res.email" name="email">
+
+        <div class="action">
+            <button (click)="updateRes(res.id, res)">Update</button>
+            <button (click)="close()">Close</button>
+        </div>
+    </form>
+</div>
+}
+
+@if (isTrue) {
+    <div class="search">
+        @for (item of searchList; track $index) {
+            <div class="item">
+                <p>{{item.name}}@if(item.resName){ && {{item.resName}} }</p>
+                <div><button (click)="deleteSingle(item)">Delete</button></div>
+            </div>
+        }
+    </div>
+}

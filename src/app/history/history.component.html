@@ -1,0 +1,65 @@
+<header>
+    <div class="left">
+        <p routerLink="/home">Home</p>
+
+    </div>
+    <div class="right">
+        <fa-icon [icon]="icon" style="margin-top: 3%; cursor: pointer;" (click)="deleteAll()"></fa-icon>
+        <p (click)="logout()">Log Out</p>
+    </div>
+</header>
+<hr>
+
+<div class="container">
+
+    @for (item of orderList; track $index) {
+        <div class="card">
+            <div class="first">
+                @for (item of item.item; track $index) {
+                    <p>Item Name : <strong><h3>{{item.name}}</h3></strong></p>
+                    <p>Item quantity : <strong><h3>{{item.number}}</h3></strong></p>
+                    <p>Price : <strong><h3>₹{{item.price}} × {{item.number}} = ₹{{item.totalPrice}}</h3></strong></p>
+                    <p>Item type : {{item.type}}</p>
+                    <hr class="hr">
+                }
+            </div>
+            <div class="second">
+                <p>Name : <strong><h3>{{item.name}}</h3></strong></p>
+                <p>Order Id : <strong>{{item.id}}</strong></p>                
+                <p>Total : <strong>₹{{item.totalPrice}}</strong></p>                
+                <p>Delivered : <strong>{{item.message}}</strong></p>
+                <p>Restaurant : <strong>{{item.resName}}</strong></p>
+                @if(item.delivered){
+                    <button (click)="rate(item)">Rate Us</button>
+                    <button (click)="order(item)">Reapet Order</button>
+                }
+                @else {
+                    <button (click)="chatNow(item)">Chat now</button>
+                }
+            </div>
+        </div>
+        }
+
+</div>
+
+@if(isShow2){
+    <div class="show">
+        <form action="">
+            <input type="text" name="userName" placeholder="Enter name" [(ngModel)]="ratinData.userName" autocomplete="off">
+            <input type="number" name="rating" placeholder="Ratings ( 0 to 5 )"[(ngModel)]="ratinData.rating" autocomplete="off">
+            <button (click)="onSubmit(ratinData)">Submit</button>
+            <button (click)="close()">Close</button>
+        </form>
+
+    </div>
+}
+
+@if(isShow3){
+    <div class="message">
+        <h1>Enter your message here...</h1>
+        <div class="message2">
+            <input type="text" placeholder="Enter your message" name="message2" [(ngModel)]="message2">
+            <button (click)="chatNow2()">Send Message</button>
+        </div>
+    </div>
+}

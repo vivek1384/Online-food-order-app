@@ -1,0 +1,178 @@
+header{
+    background: rgb(229, 255, 216);
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    gap: 2rem;    
+    padding: 10px;
+    padding-left: 2rem;
+}
+header p{
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(45, 75, 45);
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+hr{
+    margin: 0;
+    border: 1px solid rgb(45, 75, 45);
+    box-shadow: 0px 0px 16px 4px rgb(45, 75, 45);
+
+}
+
+.container{
+    width: 100vw;
+    background: rgb(229, 255, 216);
+    color: rgb(45, 75, 45);
+    display: flex;
+    flex-direction: row;
+    height: calc(100vh - 45px);
+}
+
+.container .left{
+    width: 60%;
+}
+.container .right{
+    width: 40%;
+}
+
+.left form{
+    width: 70%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 7rem;
+}
+
+.left form h1{
+    text-align: center;
+}
+
+.left form input, select{
+    width: 85%;
+    margin: auto;
+    background: transparent;
+    outline: none;
+    border: none;
+    font-size: 17px;
+    border-bottom: 2px solid rgb(45, 75, 45);
+    color: rgb(45, 75, 45);
+    padding: 5px;
+    padding-left: 15px;
+}
+
+.left form select{
+    width: 88%;
+}
+
+input::placeholder{
+    color: rgb(45, 75, 45);
+    opacity: 0.7;
+}
+
+.left form button{
+    width: 60%;
+    margin: auto;
+    margin-top: 15px;
+    padding: 5px;
+    font-size: 17px;
+    font-weight: bold;
+    color: rgb(45, 75, 45);
+    background: transparent;
+    border: 2px solid rgb(45, 75, 45);
+    cursor: pointer;
+}
+
+.left form button:hover{
+    color: rgb(229, 255, 216);
+    background: rgb(45, 75, 45);
+}
+
+.right{
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    gap: 1rem;
+}
+
+.right .top{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 1rem;
+    margin-bottom: -1rem;
+}
+
+.right .top .first, .right .top .second{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    margin-bottom: 1rem;
+    gap: 1rem;
+}
+
+.right .top button{
+    color: rgb(45, 75, 45);
+    background: transparent;
+    border: none;
+    border: 2px solid rgb(45, 75, 45);
+    outline: none;
+    font-size: 17px;
+    font-weight: bold;
+    padding: 5px 12px;
+    cursor: pointer;
+}
+
+.right .top button:hover{
+    color: rgb(229, 255, 216);
+    background: rgb(45, 75, 45);
+}
+
+.right .bottom{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 80%;
+    margin: auto;
+    margin-top: 0;
+    padding: 1rem;
+}
+
+.right .bottom h1{
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+
+.right .bottom  .card{
+    /* box-shadow: 0px 0px 16px 4px rgb(45, 75, 45); */
+    border: 2px solid rgb(45, 75, 45);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between  ;
+    padding: 10px;
+}
+
+.right .bottom .card .card-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.right .bottom .card .card-body button{
+    font-size: 15px;
+    background: transparent;
+    border: 2px solid rgb(45, 75, 45);
+    padding: 2px 25px;
+}
+.right .bottom .card .card-body button:hover{
+    background: rgb(45, 75, 45);
+    color: rgb(229, 255, 216);
+}
+
+.card p{
+    font-size: 20px;
+    font-weight: bold;
+}

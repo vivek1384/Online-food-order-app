@@ -1,0 +1,38 @@
+<div class="container">
+    @if(isTrue){
+    <form action="">
+        <p>Are you want to login as User? <span routerLink="/login">Click Here!</span></p>
+        <div class="header">
+            <h1 class="selected">Log In</h1>
+            <h1 (click)="onClick()">Sign Up</h1>
+        </div>
+        <input type="text" name="email" placeholder="Enter Email" [(ngModel)]="user.email" autocomplete="off">
+        <input type="text" name="password" placeholder="Enter Password" [(ngModel)]="user.password" autocomplete="off">
+        <button (click)="login(user.email, user.password)">Log In</button>
+    </form>
+    }
+    @else if(isShow) {
+        <form action="">
+            <p>Add your Restaurant data here.</p>
+            <input type="text" placeholder="Enter Restaurant Name" [(ngModel)]="resData.name" name="name" autocomplete="off">
+            <input type="text" placeholder="Enter Phone Number" [(ngModel)]="resData.mono" name="mono" autocomplete="off">
+            <input type="text" placeholder="Enter Email" [(ngModel)]="resData.email" name="email" autocomplete="off">
+            <button (click)="addRes(resData)">Add Restaurant</button>
+        </form>
+    }
+    @else {
+    <form action="">
+        <p>Are you want to sign up as User? <span routerLink="/login">Click Here!</span></p>
+        <div class="header">
+            <h1 (click)="onClick()">Log In</h1>
+            <h1 class="selected">Sign Up</h1>
+        </div>
+        <input type="text" name="name" placeholder="Enter Name" [(ngModel)]="user.name" autocomplete="off">
+        <input type="text" name="email" placeholder="Enter Email" [(ngModel)]="user.email" autocomplete="off">
+        <input type="text" name="password" placeholder="Enter Password" [(ngModel)]="user.password" autocomplete="off">
+
+        <button (click)="signUp(user)">Sign Up</button>
+    </form>
+
+    }
+</div>

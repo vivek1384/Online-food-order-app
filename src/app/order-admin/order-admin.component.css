@@ -1,0 +1,97 @@
+header{
+    background: rgb(229, 255, 216);
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    gap: 2rem;    
+    padding: 10px;
+    padding-left: 2rem;
+}
+header p{
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(45, 75, 45);
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+input{
+    width: 40%;
+    margin: 0 auto;
+    margin-top: 1rem;
+    background: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid rgb(45, 75, 45);
+    font-size: 17px;
+    color: rgb(45, 75, 45);
+    padding: 5px;
+    padding-left: 15px;
+    text-align: center;
+}
+
+input::placeholder{
+    color: rgb(45, 75, 45);
+    opacity: 0.7;
+}
+
+hr{
+    margin: 0;
+    border: 1px solid rgb(45, 75, 45);
+    box-shadow: 0px 0px 16px 4px rgb(45, 75, 45);
+}
+
+.hr{
+    margin: 4px 0 ;
+    box-shadow: 0 0 0 0 ;
+}
+.hr2{
+    width: 300%;
+    margin: 7px 0 ;
+    box-shadow: 0 0 0 0 ;
+}
+
+.container{
+    width: 100vw;
+    background: rgb(229, 255, 216);
+    color: rgb(45, 75, 45);
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 45px);
+    overflow-y: scroll;
+}
+
+.card{
+    width: 80%;
+    border: 2px solid rgb(45, 75, 45);
+    margin: 1rem auto;
+    margin-bottom: 0;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: fit-content;
+}
+
+.card button{
+    background: transparent;
+    border: none;
+    color: rgb(45, 75, 45);
+    font-weight: bold;
+    border: 2px solid rgb(45, 75, 45);
+    margin-top: 8px;
+    padding: 2px 18px;
+}
+
+.card .second{
+    text-align: end;
+}
+
+.card h3{
+    display:inline-block;
+}
+
+.card button:hover{
+    background: rgb(45, 75, 45);
+    color: rgb(229, 255, 216);
+}

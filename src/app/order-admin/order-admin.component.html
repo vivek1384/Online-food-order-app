@@ -1,0 +1,51 @@
+<header>
+    <p routerLink="/admin">Home</p>
+    <p routerLink="/order">Order</p>
+    <p routerLink="/review">Reviews</p>
+    <p routerLink="/chat-admin">Chat({{chatNumber}})</p>
+    <p (click)="logout()">Log out</p>
+</header>
+
+<hr>
+
+<div class="container">
+    @if(isShow){
+    <div class="card">
+        <h3>No order Found...</h3>
+    </div>
+    }@else{
+    <input type="text" placeholder="Search order by ID" [(ngModel)]="searchText" (keyup)="onChange()">
+
+    @for (item of orderList; track $index) {
+    <div class="card">
+        <div class="first">
+            @for (item of item.item; track $index) {
+            <p>Item Name : <strong>
+                    <h3>{{item.name}}</h3>
+                </strong></p>
+            <p>Item quantity : <strong>
+                    <h3>{{item.number}}</h3>
+                </strong></p>
+            <p>Price : <strong>
+                    <h3>₹{{item.price}} × {{item.number}} = ₹{{item.totalPrice}}</h3>
+                </strong></p>
+            <p>Item type : {{item.type}}</p>
+            <hr class="hr">
+            }
+            <!-- <hr class="hr2"> -->
+        </div>
+        <div class="second">
+            <p>Name : <strong>
+                    <h3>{{item.name}}</h3>
+                </strong></p>
+            <p>Order Id : <strong>{{item.id}}</strong></p>
+            <p>Total : <strong>₹{{item.totalPrice}}</strong></p>
+            <p>Tips : <strong>{{item.message2}}</strong></p>
+
+            <button (click)="delivered(item.id, item)">Delivered</button>
+        </div>
+    </div>
+    }
+    }
+
+</div>

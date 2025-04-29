@@ -1,0 +1,24 @@
+<header>
+    <p routerLink="/admin">Home</p>
+    <p routerLink="/order">Order</p>
+    <p routerLink="/review">Reviews</p>
+    <p (click)="logout()">Log out</p>
+</header>
+
+<hr>
+
+<div class="container">
+    @for (item of chatList; track $index) {
+        <div class="card">
+            <div class="first">
+                <p> User Id : <strong><h3>{{item.userId}}</h3></strong></p>
+                <p> Order Id : <strong><h3>{{item.orderId}}</h3></strong></p>
+                <p> User Name : <strong><h3>{{item.name}}</h3></strong></p>
+                <p> Message : <strong><h2>{{item.chatmessage}}</h2></strong></p>
+            </div>
+            <div class="second">
+                <button (click)="delete(item.id)">Delete</button>
+            </div>
+        </div>
+    }
+</div>

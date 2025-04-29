@@ -1,0 +1,30 @@
+<header>
+    <p routerLink="/admin">Home</p>
+    <p routerLink="/order">Order</p>
+    <p routerLink="/review">Reviews</p>
+    <p (click)="logout()">Log out</p>
+</header>
+
+<hr>
+
+<div class="container">
+    @for (item of reviewList; track $index) {
+    <div class="card">
+        <div class="first">
+            <p>Name : <strong>
+                    <h3>{{item.userName}}</h3>
+                </strong></p>
+            <p>Restaurant Name : <strong>
+                    <h3>{{item.resName}}</h3>
+                </strong></p>
+            <p>Rating : <strong>
+                    <h3>{{item.rating}}</h3>
+                </strong></p>
+            <p>User Id : <strong>
+                    <h3>{{item.userId}}</h3>
+                </strong></p>
+            
+        </div>
+    </div>
+    }
+</div>

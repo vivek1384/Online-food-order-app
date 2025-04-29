@@ -1,0 +1,97 @@
+<header>
+    <div class="left1">
+        <select name="" [(ngModel)]="resName" (change)="getItemListbyRes(resName)">
+            <option value="" selected  hidden>Select Restaurant</option>
+            @for (item of resList; track $index) {
+                <option value="{{item.name}}">{{item.name}}</option>
+            }
+        </select>
+    </div>
+    <div class="left">
+        <p (click)="chinese()">Chinese</p>
+        <p (click)="punjabi()">Punjabi</p>
+        <p (click)="southIndian()">South Indian</p>
+        <p (click)="special()">Today's Special</p>
+        <p (click)="combo()">Our Combo</p>
+        <p (click)="coldDrink()">Cold-drink</p>
+        <p (click)="extra()">Extra</p>
+    </div>
+    <div class="right">
+        <p routerLink="/history">History</p>
+        <p>{{user.name}}</p>
+        <p (click)="logout()">Log Out</p>
+    </div>
+</header>
+<hr>
+<div class="container">
+    <div class="left">
+        <input type="text" placeholder="Search your favourite..." [(ngModel)]="searchText" (keyup)="onChange()" autocomplete="off">
+
+        @for (item of itemList2; track $index) {
+        <div class="card">
+            <div class="card-header">
+                <h1>Item : {{item.name}}</h1>
+                <h4>Price : ₹{{item.price}}</h4>
+                <button (click)="addTocart1(item)">Add to cart</button>
+            </div>
+            <!-- <div class="card-body">
+                    <button (click)="increment()">+</button>
+                    <button>
+                        {{itemNumber}}
+                    </button>
+                    <button (click)="decrement()">-</button>
+                </div> -->
+        </div>
+        }
+    </div>
+    <hr>
+    <div class="right">
+        <h1 class="h1">Cart</h1>
+        <hr class="hr1">
+        <div class="cards">
+            @for (item of orderItemlist; track $index) {
+            <div class="card">
+                <div class="card-header">
+                    <h1>Item : {{item.name}}</h1>
+                    <h4>Price : ₹{{item.price}} × {{item.number}}</h4>
+                    <button (click)="removetoCart(item)">Remove to cart</button>
+                </div>
+                <div class="card-header">
+                    <p>Total price : <strong> ₹{{item.totalPrice}}</strong></p>
+                </div>
+            </div>
+            }
+        </div>
+        <input type="text" [(ngModel)]="orderData.message2" placeholder="Special tips..." autocomplete="off">
+        <Button class="order" (click)="orderPlace()">Order For ₹{{finalTotal}} <span>Including Tax(18%) : ₹{{finalTax}}</span></Button>
+    </div>
+</div>
+@if(isShow){
+<div class="show">
+    <div class="card">
+        <div class="card-header">
+            <h1>Item : {{item.name}}</h1>
+            <h4>Price : ₹{{item.price}}</h4>
+            <button (click)="addTocart(item)">Add to cart</button>
+            <button (click)="close()">Close</button>
+        </div>
+        <div class="card-body">
+            <button (click)="increment()">+</button>
+            <button>
+                {{itemNumber}}
+            </button>
+            <button (click)="decrement()">-</button>
+        </div>
+    </div>
+</div>
+}
+
+@if(isShow2){
+<div class="search">
+    <div class="list">
+        @for (item of arr; track $index) {
+            <p (click)="addTocart1(item)" style="cursor: pointer;">{{item.name}}</p>
+        }
+    </div>
+</div>
+}

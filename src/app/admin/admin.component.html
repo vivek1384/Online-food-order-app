@@ -1,0 +1,90 @@
+<header>
+    <p>Home</p>
+    <p routerLink="/order">Order</p>
+    <p routerLink="/review">Reviews</p>
+    <p (click)="logout()">Log out</p>
+    <p routerLink="/chat-admin">Chat({{chatNumber}})</p>
+    <p>{{resData.name}}</p>
+</header>
+
+<hr>
+<div class="container">
+    <div class="left">
+        @if (isShow) {
+
+
+        <form action="">
+            <h1>Add New Item</h1>
+            <input type="text" name="name" placeholder="Add Item Name" [(ngModel)]="data.name" autocomplete="off">
+            <input type="number" name="price" placeholder="Add Item Price" [(ngModel)]="data.price" autocomplete="off">
+            <select name="" [(ngModel)]="data.type" name="type">
+                <option value="" selected disabled hidden>Select type of food</option>
+                <option value="Chinese">Chinese</option>
+                <option value="Punjabi">Punjabi</option>
+                <option value="South">South Indian</option>
+                <option value="Special">Today's Special</option>
+                <option value="Combo">Our Combo</option>
+                <option value="Drink">Cold Drink</option>
+                <option value="Extra">Extra</option>
+            </select>
+            <button (click)="addItem(data)">Add Item</button>
+        </form>
+        }@else {
+            <form action="">
+                <h1>Update Item</h1>
+                <input type="text" name="name" placeholder="Add Item Name" [(ngModel)]="data.name" autocomplete="off">
+                <input type="number" name="price" placeholder="Add Item Price" [(ngModel)]="data.price" autocomplete="off">
+                <select name="" [(ngModel)]="data.type" name="type">
+                    <option value="" selected disabled hidden>Select type of food</option>
+                    <option value="Chinese">Chinese</option>
+                    <option value="Punjabi">Punjabi</option>
+                    <option value="South">South Indian</option>
+                    <option value="Special">Today's Special</option>
+                    <option value="Combo">Our Combo</option>
+                    <option value="Drink">Cold Drink</option>
+                    <option value="Extra">Extra</option>
+                </select>
+                <button (click)="updateItem(data.id, data)">Update Item</button>
+            </form>
+        }
+    </div>
+    <hr>
+    <div class="right">
+        <div class="top">
+            <div class="first">
+                <button (click)="chinese()">Chinese</button>
+                <button (click)="punjabi()">Punjabi</button>
+                <button (click)="southIndian()">South Indian</button>
+            </div>
+            <div class="second">
+                <button (click)="special()">Today's Special</button>
+                <button (click)="combo()">Our Combo</button>
+                <button (click)="coldDrink()">Cold-drink</button>
+                <button (click)="extra()">Extra</button>
+            </div>
+        </div>
+        <hr>
+        <div class="bottom">
+            @for (item of dataList2; track $index) {
+            <div class="card">
+                <div class="card-header">
+                    <h1>Item : {{item.name}}</h1>
+                    <h4>Price : ₹{{item.price}}</h4>
+                </div>
+                <div class="card-body">
+                    <button (click)="onEdit(item)">Edit</button>
+                    <button (click)="delete(item.id)">Delete</button>
+                </div>
+            </div>
+            }
+
+            @if(isTrue){
+            <div class="card">
+                <p>Click on any of the above to see the items...</p>
+            </div>
+            }
+
+        </div>
+
+    </div>
+</div>

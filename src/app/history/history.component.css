@@ -1,0 +1,181 @@
+header {
+    background: rgb(229, 255, 216);
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+    padding-left: 2rem;
+}
+
+header .left {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    gap: 2rem;
+}
+
+header .right {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    gap: 2rem;
+    padding: 0;
+    padding-right: 2rem;
+}
+
+header p {
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(45, 75, 45);
+    cursor: pointer;
+}
+
+hr {
+    margin: 0;
+    border: 1px solid rgb(45, 75, 45);
+}
+
+.container {
+    width: 100vw;
+    background: rgb(229, 255, 216);
+    color: rgb(45, 75, 45);
+    height: calc(100vh - 45px);
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+
+
+.card{
+    width: 80%;
+    border: 2px solid rgb(45, 75, 45);
+    margin: 1rem auto;
+    margin-bottom: 0;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: fit-content;
+}
+
+.card button{
+    background: transparent;
+    border: none;
+    color: rgb(45, 75, 45);
+    font-weight: bold;
+    border: 2px solid rgb(45, 75, 45);
+    margin-top: 4px;
+    padding: 2px 18px;
+    margin-left: 10px;
+}
+
+.card .second{
+    text-align: end;
+}
+
+.card h3{
+    display:inline-block;
+}
+
+.card button:hover{
+    background: rgb(45, 75, 45);
+    color: rgb(229, 255, 216);
+}
+
+.show{
+    position: absolute;
+    top: 0rem;
+    right: 32rem;
+    width: 30vw;
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+}
+
+.show form{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 80%;
+    margin: auto;
+    border: 2px solid rgb(45, 75, 45);
+    padding: 2rem;
+}
+
+form input{
+    background: transparent;
+    outline: none;
+    border: none;
+    font-size: 15px;
+    color: rgb(45, 75, 45);
+    border-bottom: 2px solid rgb(45, 75, 45);
+    padding: 5px;
+    padding-left: 12px;
+}
+
+form input::placeholder{
+    color: rgb(45, 75, 45);
+    opacity: 0.7;
+}
+
+form button{
+    width: 50%;
+    margin: auto;
+    background: transparent;
+    font-size: 16px;
+    margin-top: 8px;
+    font-weight: bold;
+    color: rgb(45, 75, 45);
+    border: 2px solid rgb(45, 75, 45);
+    padding: 4px;
+}
+
+form button:hover{
+    background: rgb(45, 75, 45);
+    color: rgb(229, 255, 216);
+}
+
+.message{
+    width: 80%;
+    position: absolute;
+    bottom: 0;
+    left: 136px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgb(45, 75, 45);
+    padding: 1rem;
+    padding-top: 2rem;
+}
+
+.message input{
+    width: calc(85% - 20px);
+    background: transparent;
+    outline: none;
+    border: none;
+    font-size: 16px;
+    padding: 5px;
+    padding-left: 15px;
+    border-bottom: 2px solid rgb(45, 75, 45);
+    color: rgb(45, 75, 45);
+    }
+
+.message h1{
+    margin: 0;
+    font-size: 25px;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+    color: rgb(45, 75, 45);
+}
+.message2{
+    display: flex;
+}
+
+.message button{
+    width: 15%;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 2px;
+    background: transparent;
+    border: none;
+    border: 2px solid rgb(45, 75, 45);
+    color: rgb(45, 75, 45);
+}

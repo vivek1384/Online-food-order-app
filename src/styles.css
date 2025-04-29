@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+*{
+    margin: 0;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+button{
+    cursor: pointer;
+}
+
+
+
+
+*::-webkit-scrollbar {
+    display: none;
+}

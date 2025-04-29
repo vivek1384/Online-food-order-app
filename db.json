@@ -1,0 +1,82 @@
+{
+  "item": [
+    {
+      "id": "1b3f",
+      "name": "Noodles",
+      "price": 99,
+      "type": "Chinese",
+      "number": "1",
+      "resName": "Mahadev"
+    },
+    {
+      "id": "9788",
+      "name": "Paneer Tika",
+      "price": 199,
+      "type": "Punjabi",
+      "number": "1",
+      "resName": "Mahadev"
+    },
+    {
+      "id": "a2d6",
+      "name": "Masala Dosa",
+      "price": 149,
+      "type": "South",
+      "number": "1",
+      "resName": "Mahadev"
+    }
+  ],
+  "orderItem": [],
+  "order": [],
+  "user": [
+    {
+      "id": "hhhh",
+      "name": "Vivek Dudhatra",
+      "email": "vivekdudhatra13@gmail.com",
+      "password": "1316",
+      "admin": true
+    },
+    {
+      "id": "e205",
+      "name": "Akhil Hapani",
+      "email": "akhil@gmail.com",
+      "password": "2410",
+      "admin": true
+    },
+    {
+      "id": "7273",
+      "name": "Viresh M.",
+      "email": "viresh@gmail.com",
+      "password": "8844",
+      "admin": false
+    }
+  ],
+  "rating": [
+    {
+      "id": "912c",
+      "userId": "7273",
+      "rating": 5,
+      "userName": "Viresh",
+      "resName": "Mahadev",
+      "orderId": null
+    },
+    {
+      "id": "a649",
+      "userId": "7273",
+      "rating": 5,
+      "userName": "Vivek",
+      "resName": "Mahadev",
+      "orderId": null
+    }
+  ],
+  "restaurant": [
+    {
+      "id": "a666",
+      "name": "Mahadev",
+      "mono": "962423864",
+      "email": "akhil@gmail.com",
+      "userId": ""
+    }
+  ],
+  "chat": []
+}
+

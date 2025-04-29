@@ -1,0 +1,28 @@
+<div class="container">
+    @if(isTrue){
+    <form action="">
+        <p>Are you want to login as Restaurant Owner? <span routerLink="/admin-login">Click Here!</span></p>
+        <div class="header">
+            <h1 class="selected">Log In</h1>
+            <h1 (click)="onClick()">Sign Up</h1>
+        </div>
+        <input autocomplete="off" type="text" name="email" placeholder="Enter Email" [(ngModel)]="user.email">
+        <input autocomplete="off" type="text" name="password" placeholder="Enter Password" [(ngModel)]="user.password">
+        <button (click)="login(user.email, user.password)">Log In</button>
+    </form>
+}
+    @else {
+        <form action="">
+            <p>Are you want to sign up as Restaurant Owner? <span routerLink="/admin-login">Click Here!</span></p>
+            <div class="header">
+                <h1 (click)="onClick()">Log In</h1>
+                <h1 class="selected">Sign Up</h1>
+            </div>
+            <input autocomplete="off" type="text" name="name" placeholder="Enter Name" [(ngModel)]="user.name">
+            <input autocomplete="off" type="text" name="email" placeholder="Enter Email" [(ngModel)]="user.email">
+            <input autocomplete="off" type="text" name="password" placeholder="Enter Password" [(ngModel)]="user.password">
+
+            <button (click)="signUp(user)">Sign Up</button>
+        </form>
+    }
+</div>

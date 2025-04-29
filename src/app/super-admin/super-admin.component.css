@@ -1,0 +1,222 @@
+.container{
+    width: 100vw;
+    height: 100vh;
+    background: rgb(247, 244, 244);
+    color: rgb(62, 4, 4);
+    display: flex;
+    flex-direction: row;
+}
+
+h1, h2{
+    font-weight: 900;
+    display: inline-block;
+}
+h3, h4, h5, h6{
+    font-weight: 500;
+}
+.left{
+    width: 16vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: rgb(62, 4, 4);
+    color: rgb(247, 244, 244);
+}
+
+.left .top{
+    display: flex;
+    flex-direction: column;
+    padding-left: 25px;
+    padding-top: 25px;
+    gap: 1rem;
+}
+.left .top p{
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+}
+.left .bottom button{
+    margin-bottom: 10px;
+    width: 100%;
+    background: rgb(247, 244, 244);
+    border: none;
+    color: rgb(62, 4, 4);
+    font-size: 21px;
+    font-weight: bold;
+    padding: 5px;
+    border: 2px solid rgb(247, 244, 244);
+}
+
+.left .bottom button:hover{
+    background: rgb(62, 4, 4);
+    border: none;
+    color: rgb(247, 244, 244);
+}
+hr{
+    border: 1px solid rgb(62, 4, 4);
+}
+.right{
+    width: 84vw;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+.right .input{
+    width: calc(80% + 2rem);
+    padding-left: 2rem;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    margin: 0 auto;
+}
+.right input{
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 1rem;
+    background: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid rgb(62, 4, 4);
+    padding: 5px;
+    padding-left: 15px;
+    font-size: 18px;
+    text-align: center;
+}
+.right input::placeholder{
+    color: rgb(62, 4, 4);
+    opacity: 0.7;
+}
+.right .cards{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 1rem;
+    gap: 1rem;
+}
+
+.right .cards .card{
+    width: 100%;
+    border:2px solid rgb(62, 4, 4);
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.right .cards .card h3{
+    text-align: end;
+}
+.right .cards .card .side2{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.right .cards .card .side2 button{
+    background: transparent;
+    border: 2px solid rgb(62, 4, 4);
+    margin-left: 10px;
+    font-size: 14px;
+    padding: 2px 12px;    
+}
+.right .cards .card .side2 button:hover{
+    background: rgb(62, 4, 4);
+    color: rgb(247, 244, 244);
+}
+
+.show{
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+}
+
+.show form{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 7rem;
+    gap: 1rem;
+}
+
+form input{
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    border-bottom: 2px solid rgb(62, 4, 4);
+    padding: 5px;
+    padding-left: 15px;
+    color: rgb(62, 4, 4);
+}
+form input::placeholder{
+    color: rgb(62, 4, 4);
+    opacity: 0.7;
+}
+
+.show .action{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin-top: 10px;
+}
+
+.show .action button{
+    width: 50%;
+    background: transparent;
+    font-size: 19px;
+    font-weight: bold;
+    padding: 5px;
+    border: 2px solid rgb(62, 4, 4);
+}
+
+.show .action button:hover{
+    color: rgb(247, 244, 244);
+    background: rgb(62, 4, 4);
+}
+
+.search{
+    width: 70vw;
+    /* height: 40vh; */
+    backdrop-filter: blur(10px);
+    position:absolute;
+    top: 4rem;
+    left: 372px;
+    max-height: calc(100vh - 4rem);
+    overflow-y: scroll;
+}
+
+.search .item{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.search p {
+    margin: 1rem;
+    margin-left: 2rem;
+    font-size: 18px;
+    font-weight: bold;
+}
+.search div{
+    margin: 1rem;
+    margin-right: 2rem;
+}
+
+.search button{
+    background: transparent;
+    font-size: 17px;
+    font-weight: bold;
+    border: none;
+    border: 2px solid rgb(62, 4, 4);
+    padding: 2px 25px;
+}
